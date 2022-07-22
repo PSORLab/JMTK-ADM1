@@ -2,7 +2,7 @@
 This work implements the anaerobic digestion model described in Rosen and Jeppson [1] using the ModelingToolkit framework [3] in the Julia programming language.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/63276909/180310567-da127458-bdbd-4875-a505-a7e028ef8b30.png" />
+  <img src="https://user-images.githubusercontent.com/63276909/180452652-148654ae-aff8-44e4-b215-0c64687c3c2b.png" />
 </p>
 
 ## Features and Capabilities
