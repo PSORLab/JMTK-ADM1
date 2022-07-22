@@ -26,7 +26,7 @@ This model simulates anaerobic digestion by solving the DAE described in Rosen a
     - Develop low complexity surrogate for model to accelerate model predictive control
 
 - ### Develop and Simulate Anaerobic Digester Controls
-    - Develop control strategy to prevent the buildup of VFAs and prevent acidogensis
+    - Develop control strategy to prevent digester upsets
     - Implement model predictive control using Julia optimization framework to implement control strategies
 
 ## Contact
