@@ -19,7 +19,7 @@ This model simulates anaerobic digestion by solving the DAE described in Rosen a
 - LinearAlgebra.jl
 
 ## Works In Progress
-- ### High Fidelity / Advanced Modeling
+- ### High Fidelity / Advanced Modeling <img align="right" src="https://user-images.githubusercontent.com/63276909/180566202-1413bc1c-a80c-4510-8eb9-62670a5e09ac.png">
     - Establish spatial heterogeneity using compartment modeling with Modelingtoolkit modules
     - Map common wastewater parameters to ADM1 state variables and or parameters
     - Establish temperature dependency / energy balance within model
