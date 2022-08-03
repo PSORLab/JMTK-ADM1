@@ -12,8 +12,8 @@ using DelimitedFiles
 using Symbolics:@register_symbolic,scalarize
 #--------------------------------------------------------------------------------------
 #SET UP INFLUENT DATA STREAMS
-#Specify relevant time range
-t_r=0.0:1/96:280.0
+#Specify relevant time range for influent data
+t_r=0.0:1/96:280.0 # Units of days, sampled every 15 minutes
 #Import and divide digester influent data - taken from PyADM1 implementation [2]
 in_dat_full=readdlm("digester_influent.csv",',',Float64)';
 in_dat =in_dat_full[2:end-1,:];
@@ -34,7 +34,7 @@ function S_va_in_itp(time)
 end; @register_symbolic S_va_in_itp(time)
 function S_bu_in_itp(time)
     true_time=round(Int,time/(1/96))+1; cdat=IfElse.ifelse(true_time<1,1,IfElse.ifelse(true_time>26881,26881,true_time)); return in_dat[5,cdat]
-end; @register_symbolic S_va_in_itp(time)
+end; @register_symbolic S_bu_in_itp(time)
 function S_pro_in_itp(time)
     true_time=round(Int,time/(1/96))+1; cdat=IfElse.ifelse(true_time<1,1,IfElse.ifelse(true_time>26881,26881,true_time)); return in_dat[6,cdat]
 end; @register_symbolic S_pro_in_itp(time)
@@ -198,7 +198,7 @@ function ADM1_factory(;name)
     S_aa_in ~ S_aa_in_itp(t),
     S_fa_in ~ S_fa_in_itp(t),
     S_va_in ~ S_va_in_itp(t),
-    S_bu_in ~ S_va_in_itp(t),
+    S_bu_in ~ S_bu_in_itp(t),
     S_pro_in ~ S_pro_in_itp(t),
     S_ac_in ~ S_ac_in_itp(t),
     S_h2_in ~ S_h2_in_itp(t),
